@@ -50,3 +50,20 @@ nav {
 .form-nav button:active {
   box-shadow: var(--clickedButtonShadow);
 }
+
+form {
+  width: 75vw;
+  background-color: silver;
+  margin: 25px auto;
+  padding: 10px;
+
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr;
+  gap: 1rem;
+}
+
+.course-form form > label:first-child {
+  grid-area: 1 / 1 / 2 / 4;
+  display: flex;
+  justify-content: center;
+}
