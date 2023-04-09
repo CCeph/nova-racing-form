@@ -8,6 +8,7 @@ body {
 
 :root {
   --logoSize: 200px;
+  --clickedButtonShadow: inset 0px 0px 3px grey;
 }
 
 button,
@@ -37,4 +38,15 @@ textarea {
 nav {
   display: flex;
   justify-content: space-evenly;
+  padding: 10px 0px;
+}
+
+.form-nav button {
+  border: 0px;
+  border-radius: 5px;
+  padding: 0.75rem;
+}
+
+.form-nav button:active {
+  box-shadow: var(--clickedButtonShadow);
 }
