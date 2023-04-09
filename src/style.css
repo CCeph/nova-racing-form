@@ -52,10 +52,11 @@ nav {
 }
 
 form {
-  width: 75vw;
+  width: clamp(400px, 65vw, 600px);
   background-color: silver;
   margin: 25px auto;
   padding: 10px;
+  border-radius: 10px;
 
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr 1fr;
