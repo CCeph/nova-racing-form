@@ -7,7 +7,17 @@ body {
 }
 
 :root {
-  --logoSize: 150px;
+  --logoSize: 200px;
+}
+
+.header {
+  height: 120px;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #0a131e;
 }
 
 .header img {
