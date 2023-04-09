@@ -60,10 +60,23 @@ form {
   display: grid;
   grid-template: 1fr 1fr / 1fr 1fr 1fr;
   gap: 1rem;
+  justify-items: center;
 }
 
 .course-form form > label:first-child {
   grid-area: 1 / 1 / 2 / 4;
   display: flex;
   justify-content: center;
+}
+
+.course-form button:active {
+  box-shadow: var(--clickedButtonShadow);
+}
+
+.course-form button[type="submit"] {
+  grid-area: 3 / 2 / 4 / 3;
+  color: white;
+  background-color: #2bb932;
+  border: 1px solid black;
+  padding: 0.75rem;
 }
