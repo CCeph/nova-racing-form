@@ -24,3 +24,8 @@ body {
   height: var(--logoSize);
   width: var(--logoSize);
 }
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
