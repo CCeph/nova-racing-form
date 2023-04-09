@@ -10,6 +10,15 @@ body {
   --logoSize: 200px;
 }
 
+button,
+fieldset,
+input,
+legend,
+select,
+textarea {
+  appearance: none;
+}
+
 .header {
   height: 120px;
   overflow-y: hidden;
