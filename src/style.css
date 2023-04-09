@@ -4,5 +4,13 @@
 
 body {
   margin: 0;
-  padding: 0;
+}
+
+:root {
+  --logoSize: 150px;
+}
+
+.header img {
+  height: var(--logoSize);
+  width: var(--logoSize);
 }
