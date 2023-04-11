@@ -2,6 +2,10 @@ const cachedDOM = (function createDOMCache() {
   const courseSelectButtons = document.querySelectorAll(
     ".course-form button[type=button]"
   );
+  const courseSelectForm = document.querySelector(
+    `form[data-form="course-select"]`
+  );
+  const userInfoForm = document.querySelector(`form[data-form="user-info"]`);
 
   function getDOMElement(elementToGet) {
     if (elementToGet in cachedDOM) {
@@ -10,12 +14,10 @@ const cachedDOM = (function createDOMCache() {
     return undefined;
   }
 
-  return { courseSelectButtons, getDOMElement };
+  return { courseSelectButtons, courseSelectForm, userInfoForm, getDOMElement };
 })();
 
-function clearSelectedCourseButtons() {
-  const courseButtonList = cachedDOM.getDOMElement("courseSelectButtons");
-  const courseButtonArray = Array.from(courseButtonList);
+function clearSelectedCourseButtons(courseButtonArray) {
   courseButtonArray.forEach((courseButton) => {
     courseButton.classList.remove("selected");
     courseButton.setAttribute("data-selected", "no");
@@ -28,9 +30,9 @@ function bindCourseSelectButtons() {
   courseButtonArray.forEach((courseButton) => {
     courseButton.addEventListener("click", () => {
       if (courseButton.getAttribute("data-selected") === "yes") {
-        clearSelectedCourseButtons();
+        clearSelectedCourseButtons(courseButtonArray);
       } else if (courseButton.getAttribute("data-selected") === "no") {
-        clearSelectedCourseButtons();
+        clearSelectedCourseButtons(courseButtonArray);
         courseButton.setAttribute("data-selected", "yes");
         courseButton.classList.add("selected");
       }
