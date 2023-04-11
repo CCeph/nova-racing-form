@@ -33,25 +33,31 @@
     </div>
 
     <div class="user-info-form">
-      <h2>Your Details</h2>
-      <label for="first-name">First Name: </label>
-      <input type="text" name="first-name" id="first-name" />
-      <label for="last-name">Last Name: </label>
-      <input type="text" name="last-name" id="last-name" />
-      <label for="user-email">Email: </label>
-      <input type="email" name="user-email" id="user-email" />
-      <label for="user-password">Password: </label>
-      <input type="password" name="user-password" id="user-password" />
-      <label for="user-confirm-password">Confirm Password: </label>
-      <input
-        type="password"
-        name="user-confirm-password"
-        id="user-confirm-password"
-      />
-      <label for="user-country">Country: </label>
-      <input type="text" name="user-country" id="user-country" />
-      <label for="user-postal-code">Postal Code: </label>
-      <input type="text" name="user-postal-code" id="user-postal-code" />
+      <form action="">
+        <h2>Your Details</h2>
+        <div class="name-wrapper">
+          <label for="first-name">First Name: </label>
+          <input type="text" name="first-name" id="first-name" />
+          <label for="last-name">Last Name: </label>
+          <input type="text" name="last-name" id="last-name" />
+        </div>
+        <label for="user-email">Email: </label>
+        <input type="email" name="user-email" id="user-email" />
+        <label for="user-password">Password: </label>
+        <input type="password" name="user-password" id="user-password" />
+        <label for="user-confirm-password">Confirm Password: </label>
+        <input
+          type="password"
+          name="user-confirm-password"
+          id="user-confirm-password"
+        />
+        <div class="location-wrapper">
+          <label for="user-country">Country: </label>
+          <input type="text" name="user-country" id="user-country" />
+          <label for="user-postal-code">Postal Code: </label>
+          <input type="text" name="user-postal-code" id="user-postal-code" />
+        </div>
+      </form>
     </div>
   </body>
 </html>

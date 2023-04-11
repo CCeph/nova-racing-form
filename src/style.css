@@ -51,7 +51,7 @@ nav {
   box-shadow: var(--clickedButtonShadow);
 }
 
-form {
+.course-form > form {
   width: clamp(400px, 65vw, 600px);
   background-color: silver;
   margin: 25px auto;
@@ -81,3 +81,22 @@ form {
   border: 1px solid black;
   padding: 0.75rem;
 }
+
+/*Start of styling for User Details form*/
+
+.user-info-form > form {
+  width: clamp(400px, 65vw, 650px);
+  background-color: silver;
+  margin: 25px auto;
+  padding: 10px 1rem;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.user-info-form :is(label, input) {
+  margin: 5px 5px;
+}
+
+/*End of styling for User Details form*/
