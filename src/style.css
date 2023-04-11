@@ -87,6 +87,10 @@ nav {
   padding: var(--submitButtonPadding);
 }
 
+.course-form button.selected {
+  background-color: #ddd;
+}
+
 /*Start of styling for User Details form*/
 
 .user-info-form > form {
