@@ -6,6 +6,9 @@ const cachedDOM = (function createDOMCache() {
     `form[data-form="course-select"]`
   );
   const userInfoForm = document.querySelector(`form[data-form="user-info"]`);
+  const courseError = document.querySelector(
+    ".course-form [data-course-error]"
+  );
 
   function getDOMElement(elementToGet) {
     if (elementToGet in cachedDOM) {
@@ -14,7 +17,13 @@ const cachedDOM = (function createDOMCache() {
     return undefined;
   }
 
-  return { courseSelectButtons, courseSelectForm, userInfoForm, getDOMElement };
+  return {
+    courseSelectButtons,
+    courseSelectForm,
+    userInfoForm,
+    courseError,
+    getDOMElement,
+  };
 })();
 
 function clearSelectedCourseButtons(courseButtonArray) {
