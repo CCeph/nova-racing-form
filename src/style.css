@@ -9,6 +9,11 @@ body {
 :root {
   --logoSize: 200px;
   --clickedButtonShadow: inset 0px 0px 3px grey;
+
+  --submitButtonBackgroundColor: #2bb932;
+  --submitButtonColor: white;
+  --submitButtonBorder: 1px solid black;
+  --submitButtonPadding: 0.75rem;
 }
 
 button,
@@ -76,10 +81,10 @@ nav {
 
 .course-form button[type="submit"] {
   grid-area: 3 / 2 / 4 / 3;
-  color: white;
-  background-color: #2bb932;
-  border: 1px solid black;
-  padding: 0.75rem;
+  color: var(--submitButtonColor);
+  background-color: var(--submitButtonBackgroundColor);
+  border: var(--submitButtonBorder);
+  padding: var(--submitButtonPadding);
 }
 
 /*Start of styling for User Details form*/
@@ -105,6 +110,16 @@ nav {
 
 :is(.name-wrapper, .location-wrapper) input {
   flex: 1;
+}
+
+.user-info-form button {
+  width: 100px;
+  margin: auto;
+
+  color: var(--submitButtonColor);
+  background-color: var(--submitButtonBackgroundColor);
+  border: var(--submitButtonBorder);
+  padding: var(--submitButtonPadding);
 }
 
 /*End of styling for User Details form*/
