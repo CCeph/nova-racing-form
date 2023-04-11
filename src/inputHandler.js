@@ -65,10 +65,13 @@ function checkForSelectedCourses() {
 
 function validateCourseForm() {
   const validCourseSelection = checkForSelectedCourses();
+  const courseErrorPopup = cachedDOM.getDOMElement("courseError");
   if (validCourseSelection === true) {
     // Check passed
+    courseErrorPopup.textContent = "";
   } else if (validCourseSelection === false) {
     // Check fails
+    courseErrorPopup.textContent = "Select a course!";
   }
 }
 
