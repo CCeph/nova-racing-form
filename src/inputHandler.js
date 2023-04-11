@@ -41,3 +41,31 @@ function bindCourseSelectButtons() {
 }
 
 bindCourseSelectButtons();
+
+function checkForSelectedCourses() {
+  const courseButtonList = cachedDOM.getDOMElement("courseSelectButtons");
+  const courseButtonArray = Array.from(courseButtonList);
+  const filteredArray = courseButtonArray.filter(
+    (course) => course.getAttribute("data-selected") === "yes"
+  );
+  if (filteredArray.length === 1) {
+    return true;
+  }
+  return false;
+}
+
+function validateCourseForm() {
+  const validCourseSelection = checkForSelectedCourses();
+  if (validCourseSelection === true) {
+    // Check passed
+  } else if (validCourseSelection === false) {
+    // Check fails
+  }
+}
+
+cachedDOM
+  .getDOMElement("courseSelectForm")
+  .addEventListener("submit", (event) => {
+    validateCourseForm();
+    event.preventDefault();
+  });
