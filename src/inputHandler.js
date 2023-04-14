@@ -1,3 +1,5 @@
+import PubSub from "pubsub-js";
+
 const cachedDOM = (function createDOMCache() {
   const courseSelectButtons = document.querySelectorAll(
     ".course-form button[type=button]"
