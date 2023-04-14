@@ -70,6 +70,8 @@ function validateCourseForm() {
   const courseErrorPopup = cachedDOM.getDOMElement("courseError");
   if (validCourseSelection === true) {
     // Check passed
+    const courseFormPassed = "courseFormPassed";
+    PubSub.publish(courseFormPassed);
     courseErrorPopup.textContent = "";
   } else if (validCourseSelection === false) {
     // Check fails
