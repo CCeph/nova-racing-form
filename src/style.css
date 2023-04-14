@@ -15,6 +15,7 @@ body {
   --submitButtonBorder: 1px solid black;
   --submitButtonPadding: 0.75rem;
   --slingShot: cubic-bezier(1, -0.44, 0.45, 0.88);
+  --slideTime: 500ms;
 }
 
 button,
@@ -99,7 +100,7 @@ nav {
   left: 50%;
   transform: translate(-50%, -50%);
   animation: fade-in 500ms ease-in-out 0s 1 forwards normal;
-  transition: left 500ms var(--slingShot);
+  transition: left var(--slideTime) var(--slingShot);
 }
 
 .course-form.passed {
@@ -154,7 +155,15 @@ nav {
 }
 
 .user-info-form {
-  transform: translate(100%);
+  position: fixed;
+  top: 140%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: top var(--slideTime) var(--slideTime) ease-in-out;
+}
+
+.user-info-form.active {
+  top: 50%;
 }
 
 /*End of styling for User Details form*/

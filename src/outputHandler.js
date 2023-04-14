@@ -9,6 +9,7 @@ const cachedDOM = (function createDOMCache() {
   );
   const courseFormWrapper = document.querySelector("[data-course-wrapper");
   const userInfoForm = document.querySelector(`form[data-form="user-info"]`);
+  const userInfoWrapper = document.querySelector("[data-user-info-wrapper]");
   const courseError = document.querySelector(
     ".course-form [data-course-error]"
   );
@@ -26,6 +27,7 @@ const cachedDOM = (function createDOMCache() {
     userInfoForm,
     courseError,
     courseFormWrapper,
+    userInfoWrapper,
     getDOMElement,
   };
 })();
@@ -33,8 +35,10 @@ const cachedDOM = (function createDOMCache() {
 function displayPassedCourseForm() {
   const courseFormWrapper = cachedDOM.getDOMElement("courseFormWrapper");
   const courseErrorPopup = cachedDOM.getDOMElement("courseError");
+  const userInfoWrapper = cachedDOM.getDOMElement("userInfoWrapper");
   courseErrorPopup.textContent = "";
   courseFormWrapper.classList.add("passed");
+  userInfoWrapper.classList.add("active");
 }
 
 function bindEventsForCourseForm() {
