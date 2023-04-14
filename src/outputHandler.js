@@ -7,6 +7,7 @@ const cachedDOM = (function createDOMCache() {
   const courseSelectForm = document.querySelector(
     `form[data-form="course-select"]`
   );
+  const courseFormWrapper = document.querySelector("[data-course-wrapper");
   const userInfoForm = document.querySelector(`form[data-form="user-info"]`);
   const courseError = document.querySelector(
     ".course-form [data-course-error]"
@@ -24,12 +25,16 @@ const cachedDOM = (function createDOMCache() {
     courseSelectForm,
     userInfoForm,
     courseError,
+    courseFormWrapper,
     getDOMElement,
   };
 })();
 
 function displayPassedCourseForm() {
-  console.log("cos");
+  const courseFormWrapper = cachedDOM.getDOMElement("courseFormWrapper");
+  const courseErrorPopup = cachedDOM.getDOMElement("courseError");
+  courseErrorPopup.textContent = "";
+  courseFormWrapper.classList.add("passed");
 }
 
 function bindEventsForCourseForm() {

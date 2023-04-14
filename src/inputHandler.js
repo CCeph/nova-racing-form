@@ -71,8 +71,7 @@ function validateCourseForm() {
   if (validCourseSelection === true) {
     // Check passed
     const courseFormPassed = "courseFormPassed";
-    PubSub.publish(courseFormPassed);
-    courseErrorPopup.textContent = "";
+    PubSub.publish(courseFormPassed, validCourseSelection);
   } else if (validCourseSelection === false) {
     // Check fails
     courseErrorPopup.textContent = "Select a course!";
