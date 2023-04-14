@@ -91,6 +91,27 @@ nav {
   background-color: #ddd;
 }
 
+.course-form {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: fade-in 500ms ease-in-out 0s 1 forwards normal;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1, 1);
+  }
+}
+
 /*Start of styling for User Details form*/
 
 .user-info-form > form {
@@ -124,6 +145,10 @@ nav {
   background-color: var(--submitButtonBackgroundColor);
   border: var(--submitButtonBorder);
   padding: var(--submitButtonPadding);
+}
+
+.user-info-form {
+  transform: translate(100%);
 }
 
 /*End of styling for User Details form*/
