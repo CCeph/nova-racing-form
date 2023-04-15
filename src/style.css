@@ -27,6 +27,12 @@ textarea {
   appearance: none;
 }
 
+.grid-body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: 120px 60px 1fr;
+}
+
 .header {
   height: 120px;
   overflow-y: hidden;
@@ -61,7 +67,7 @@ nav {
 .course-form > form {
   width: clamp(400px, 65vw, 600px);
   background-color: silver;
-  margin: 25px auto;
+  margin: clamp(25px, 20vh, 200px) auto;
   padding: 10px;
   border-radius: 10px;
 
@@ -94,28 +100,27 @@ nav {
 }
 
 .course-form {
-  opacity: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: transform var(--slideTime) var(--slingShot);
+}
+
+.course-form.load {
   animation: fade-in 500ms ease-in-out 0s 1 forwards normal;
-  transition: left var(--slideTime) var(--slingShot);
 }
 
 .course-form.passed {
-  left: -50%;
+  transform: translateX(-100%);
 }
 
 @keyframes fade-in {
   0% {
     opacity: 0;
-    transform: translate(-50%, -50%) scale(0, 0);
+    transform: scale(0, 0);
   }
 
   100% {
     opacity: 1;
-    transform: translate(-50%, -50%) scale(1, 1);
+    transform: scale(1, 1);
   }
 }
 
