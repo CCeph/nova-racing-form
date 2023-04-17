@@ -101,7 +101,6 @@ nav {
 
 .course-form {
   opacity: 1;
-  transition: transform var(--slideTime) var(--slingShot);
 }
 
 .course-form.load {
@@ -109,7 +108,7 @@ nav {
 }
 
 .course-form.passed {
-  transform: translateX(-100%);
+  animation: slide-out 500ms var(--slingShot) 0s 1 forwards normal;
 }
 
 @keyframes fade-in {
@@ -121,6 +120,16 @@ nav {
   100% {
     opacity: 1;
     transform: scale(1, 1);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(1, 1) translateX(-100%);
   }
 }
 
